@@ -114,6 +114,11 @@ async def on_ready():
     atime = datetime.datetime.now()
     print(f'Logged in as {bot.user}')
 
+
+
+
+
+
 @bot.command()
 async def save(ctx):
     save_game()
@@ -382,7 +387,8 @@ async def sellmarket(ctx, c, a, p: int):
         transaction = discord.Embed(title=f"{ctx.message.author.name}", \
                 description=f"Is selling {amnt} shares of {company.dname} for ${round(price,2)} per share -> ${round(price,2)*amnt} total", color=0x00ff00)
         await ctx.message.delete()
-        await ctx.send(embed=transaction)
+        await bot.get_channel(637485811314589696).send(embed=transaction)
+        await bot.get_channel(622836851199442963).send(embed=transaction)
         return
 
     else:
@@ -627,4 +633,4 @@ async def on_message(message):
     await bot.invoke(ctx)
     #await bot.process_commands(message)
        
-bot.run('NjM2MjIwNDMyNTc5ODIxNTc5.XbNH6g.qk4XaZs_uRNFdxqEjgKNGzaDbG8')
+bot.run('')
